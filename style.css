@@ -1,0 +1,1553 @@
+/*
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  PORTFÓLIO — André Alves · Sigma Orbitek                        ║
+  ║  style.css                                                       ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  AULA: Organização de um arquivo CSS profissional                ║
+  ║  Sempre divida em seções com comentários. Facilita manutenção.   ║
+  ║                                                                  ║
+  ║  1. Variáveis (tokens de design)                                 ║
+  ║  2. Reset & Base                                                 ║
+  ║  3. Componentes globais (botões, container, etc.)                ║
+  ║  4. Navbar                                                       ║
+  ║  5. Hero                                                         ║
+  ║  6. Sobre                                                        ║
+  ║  7. Habilidades                                                  ║
+  ║  8. Projetos                                                     ║
+  ║  9. Certificados                                                 ║
+  ║  10. Contato                                                     ║
+  ║  11. Footer                                                      ║
+  ║  12. Responsivo (media queries)                                  ║
+  ╚══════════════════════════════════════════════════════════════════╝
+*/
+
+
+/* ================================================================
+   1. VARIÁVEIS CSS — O "manual de identidade visual" do código
+   
+   AULA: O que são variáveis CSS?
+   São como atalhos. Em vez de escrever #00D4FF em 50 lugares,
+   você define UMA vez e usa o nome. Se quiser mudar a cor,
+   muda só aqui — e atualiza em todo o site automaticamente.
+   
+   Analogia: é como ter uma paleta de tinta etiquetada.
+   Você não mistura as cores a cada parede, você usa a etiqueta.
+================================================================ */
+:root {
+    /* === CORES === */
+
+    /* Fundos — do mais escuro ao menos escuro */
+    --color-bg-deep: #050810;
+    /* fundo principal — espaço profundo     */
+    --color-bg-dark: #080C14;
+    /* fundo de seções alternadas            */
+    --color-bg-card: #0D1220;
+    /* fundo de cards                        */
+    --color-bg-card-hover: #111827;
+    /* fundo de cards no hover             */
+    --color-border: rgba(0, 212, 255, 0.12);
+    /* bordas suaves          */
+    --color-border-hover: rgba(0, 212, 255, 0.35);
+
+    /* Cores de marca — Sigma Orbitek (paleta real do logo) */
+    --color-primary: #F5A623;
+    /* dourado do Σ — cor principal          */
+    --color-primary-dim: rgba(245, 166, 35, 0.12);
+    --color-secondary: #6B21D6;
+    /* roxo orbital — cor do texto do logo   */
+    --color-accent: #9333EA;
+    /* roxo claro — acento intermediário     */
+    --color-silver: #C0C0C0;
+    /* prata — anel orbital do logo          */
+
+    /* Texto */
+    --color-text-primary: #F0F4FF;
+    /* texto principal — quase branco    */
+    --color-text-secondary: #8B9EC7;
+    /* texto secundário — cinza azulado  */
+    --color-text-muted: #4A5568;
+    /* texto desativado                  */
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #F5A623, #6B21D6);
+    --gradient-card: linear-gradient(135deg, rgba(245, 166, 35, 0.05), rgba(107, 33, 214, 0.05));
+    --gradient-hero: radial-gradient(ellipse at 70% 50%, rgba(245, 166, 35, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 30% 80%, rgba(107, 33, 214, 0.06) 0%, transparent 50%);
+
+    /* === TIPOGRAFIA === */
+    --font-display: 'Orbitron', monospace;
+    /* títulos, logo, destaques */
+    --font-body: 'Exo 2', sans-serif;
+    /* textos, parágrafos       */
+
+    /* Escala tipográfica — tamanhos padronizados */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 1.875rem;
+    /* 30px */
+    --text-4xl: 2.25rem;
+    /* 36px */
+    --text-5xl: 3rem;
+    /* 48px */
+    --text-6xl: 3.75rem;
+    /* 60px */
+
+    /* === ESPAÇAMENTO === */
+    --space-1: 0.25rem;
+    /* 4px  */
+    --space-2: 0.5rem;
+    /* 8px  */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-24: 6rem;
+    /* 96px */
+
+    /* === BORDAS === */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* === SOMBRAS === */
+    --shadow-sm: 0 0 15px rgba(245, 166, 35, 0.10);
+    --shadow-md: 0 0 30px rgba(245, 166, 35, 0.15);
+    --shadow-lg: 0 0 60px rgba(107, 33, 214, 0.20);
+    --shadow-glow: 0 0 20px rgba(245, 166, 35, 0.5), 0 0 60px rgba(245, 166, 35, 0.15);
+
+    /* === TRANSIÇÕES === */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === LAYOUT === */
+    --navbar-height: 70px;
+    --container-max: 1200px;
+}
+
+
+/* ================================================================
+   2. RESET & BASE
+   
+   AULA: Por que fazer reset?
+   Cada navegador tem estilos padrão diferentes.
+   O Chrome adiciona margem em certos elementos, o Firefox em outros.
+   O reset "zera" tudo para que você tenha controle total.
+================================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* AULA: inclui padding e border no tamanho total */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Scroll suave ao clicar nos links de navegação */
+    scroll-padding-top: var(--navbar-height);
+    /* Não esconder conteúdo atrás da navbar */
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-deep);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Impede scroll horizontal indesejado */
+}
+
+/* Imagens responsivas — nunca ultrapassam o container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Links sem sublinhado por padrão */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-base);
+}
+
+/* Listas sem marcadores por padrão */
+ul {
+    list-style: none;
+}
+
+/* Botão base */
+button {
+    cursor: pointer;
+    font-family: var(--font-body);
+    border: none;
+    background: none;
+}
+
+/* Seleção de texto com cor da marca */
+::selection {
+    background-color: var(--color-primary-dim);
+    color: var(--color-primary);
+}
+
+
+/* ================================================================
+    3. COMPONENTES GLOBAIS
+================================================================ */
+
+/* --- Container: limita a largura e centraliza o conteúdo --- */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* --- Cabeçalho de seção padronizado --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-12);
+}
+
+.section-title {
+    font-family: var(--font-body);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.section-title i {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+}
+
+.section-link {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    transition: gap var(--transition-base);
+}
+
+.section-link:hover {
+    gap: var(--space-3);
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+/* Botão primário — cheio com gradiente */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+}
+
+/* Botão outline — transparente com borda */
+.btn-outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-hover);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Tags de tecnologia */
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: 500;
+}
+
+
+/* ================================================================
+        4. NAVBAR
+================================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    z-index: 1000;
+    background: rgba(5, 8, 16, 0.85);
+    backdrop-filter: blur(20px);
+    /* Efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+/* Navbar com sombra após rolar a página (adicionado via JS) */
+.navbar.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border-bottom-color: var(--color-border-hover);
+}
+
+.nav-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity var(--transition-base), filter var(--transition-base);
+    filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.3));
+}
+
+.nav-logo:hover .nav-logo-img {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 14px rgba(245, 166, 35, 0.55));
+}
+
+/* Links de navegação */
+.men-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+}
+
+.men-link {
+    padding: 0.4rem 0.8rem;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.men-link:hover,
+.men-link.active {
+    color: var(--color-primary);
+}
+
+/* Sublinhado animado no link ativo */
+.men-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0.8rem;
+    right: 0.8rem;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* Botão de currículo na nav */
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.5rem 1.2rem;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.btn-cv:hover {
+    background: var(--color-primary-dim);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Botão hamburguer (só mobile) */
+.menu-celu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-celu span {
+    display: block;
+    height: 2px;
+    background: var(--color-text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+}
+
+.menu-celu.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-celu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-celu.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ================================================================
+   5. HERO
+================================================================ */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-deep);
+    overflow: hidden;
+}
+
+/* Canvas de estrelas (JS vai desenhar aqui) */
+.star-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Anéis orbitais decorativos */
+.orbital-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 166, 35, 0.06);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.orbital-ring--1 {
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    animation: orbit-rotate 20s linear infinite;
+}
+
+.orbital-ring--2 {
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    animation: orbit-rotate 30s linear infinite reverse;
+}
+
+@keyframes orbit-rotate {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--navbar-height) var(--space-6) var(--space-16);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-16);
+    min-height: 100vh;
+}
+
+/* Pré-título */
+.hero-pretitle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: fade-up 0.6s ease both;
+}
+
+.pretitle-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* Título principal */
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    /* responsivo automático */
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: var(--space-4);
+    animation: fade-up 0.6s ease 0.1s both;
+}
+
+/* Palavra em destaque (sobrenome) */
+.highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+    animation: fade-up 0.6s ease 0.2s both;
+}
+
+/* Tag da marca Sigma Orbitek */
+.hero-brand-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--color-border-hover);
+    border-radius: var(--radius-full);
+    background: var(--color-primary-dim);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+    animation: fade-up 0.6s ease 0.25s both;
+}
+
+.sigma-symbol {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+}
+
+.brand-separator {
+    color: var(--color-text-muted);
+}
+
+/* Descrição */
+.hero-description {
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin-bottom: var(--space-8);
+    line-height: 1.7;
+    animation: fade-up 0.6s ease 0.3s both;
+}
+
+/* Botões de ação */
+.hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+    animation: fade-up 0.6s ease 0.4s both;
+}
+
+/* Links sociais */
+.hero-socials {
+    display: flex;
+    gap: var(--space-3);
+    animation: fade-up 0.6s ease 0.5s both;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+    transition: all var(--transition-base);
+}
+
+.social-link:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Foto com anel luminoso */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in 0.8s ease 0.3s both;
+}
+
+.photo-frame {
+    position: relative;
+    width: 360px;
+    height: 360px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 3px solid rgba(0, 212, 255, 0.3);
+}
+
+/* Anel luminoso que pulsa */
+.photo-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    opacity: 0.6;
+    animation: ring-pulse 3s ease-in-out infinite;
+    z-index: 3;
+}
+
+.photo-ring--outer {
+    inset: -20px;
+    border-width: 1px;
+    border-color: rgba(0, 212, 255, 0.3);
+    animation-delay: 0.5s;
+}
+
+@keyframes ring-pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(1.02);
+    }
+}
+
+/* Partículas decorativas ao redor da foto */
+.photo-particles {
+    position: absolute;
+    inset: -40px;
+    pointer-events: none;
+}
+
+.photo-particles span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px rgba(245, 166, 35, 0.6);
+}
+
+.photo-particles span:nth-child(1) {
+    top: 10%;
+    right: 5%;
+    animation: float-particle 4s ease-in-out infinite;
+}
+
+.photo-particles span:nth-child(2) {
+    bottom: 15%;
+    left: 5%;
+    animation: float-particle 4s ease-in-out 1s infinite;
+}
+
+.photo-particles span:nth-child(3) {
+    top: 50%;
+    right: 0%;
+    width: 4px;
+    height: 4px;
+    animation: float-particle 5s ease-in-out 0.5s infinite;
+}
+
+.photo-particles span:nth-child(4) {
+    bottom: 30%;
+    right: 10%;
+    width: 3px;
+    height: 3px;
+    animation: float-particle 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes float-particle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-12px);
+        opacity: 0.5;
+    }
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    animation: bounce-indicator 2s ease-in-out infinite;
+}
+
+.scroll-indicator i {
+    font-size: var(--text-xl);
+}
+
+@keyframes bounce-indicator {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(6px);
+        opacity: 1;
+    }
+}
+
+/* Animações de entrada */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ================================================================
+   6. SOBRE
+================================================================ */
+.about {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.about-quote-bar {
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.about-text {
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.about-text p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+}
+
+/* Cards de destaque */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+}
+
+.about-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.about-card:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.about-card-icon {
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+    display: block;
+}
+
+.about-card h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+}
+
+.about-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.about-card-status {
+    display: inline-block;
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+
+/* ================================================================
+   7. HABILIDADES
+================================================================ */
+.skills {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-deep);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+.skill-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.skill-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.skill-card-header i {
+    font-size: var(--text-xl);
+    color: var(--color-primary);
+}
+
+.skill-card-header h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Dots de nível de habilidade */
+.skill-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-bg-card-hover);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.dot.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 6px rgba(245, 166, 35, 0.5);
+}
+
+
+/* ================================================================
+   8. PROJETOS
+================================================================ */
+.projects {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-dark);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.project-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.project-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--color-bg-card-hover);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Overlay que aparece no hover */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 8, 16, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-demo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.6rem 1.4rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: transform var(--transition-base);
+}
+
+.project-demo-btn:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: var(--space-6);
+}
+
+.project-title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.project-icon {
+    font-size: var(--text-lg);
+}
+
+.project-info h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.project-info p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    transition: gap var(--transition-base);
+}
+
+.project-link:hover {
+    gap: var(--space-2);
+}
+
+.project-link--github {
+    color: var(--color-text-secondary);
+}
+
+.project-link--github:hover {
+    color: var(--color-text-primary);
+    gap: var(--space-2);
+}
+
+
+/* ================================================================
+   9. CERTIFICADOS
+================================================================ */
+.certificates {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-deep);
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+}
+
+.certificate-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    transition: all var(--transition-base);
+}
+
+.certificate-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.certificate-logo {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.certificate-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cert-html {
+    background: linear-gradient(135deg, #e44d26, #f16529);
+    color: white;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-align: center;
+}
+
+.cert-git {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--color-text-primary);
+    font-size: var(--text-xl);
+    border: 1px solid var(--color-border);
+}
+
+.cert-logic {
+    background: var(--color-primary-dim);
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+    border: 1px solid var(--color-border);
+}
+
+.certificate-info h3 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+    line-height: 1.3;
+}
+
+.certificate-source {
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    display: block;
+}
+
+.certificate-year {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+
+/* ================================================================
+   10. CONTATO
+================================================================ */
+.contact {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-dark);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.contact-description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+}
+
+.contact-list i {
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-list a:hover {
+    color: var(--color-primary);
+}
+
+/* Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    transition: border-color var(--transition-base);
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-dim);
+}
+
+
+/* ================================================================
+   11. FOOTER
+================================================================ */
+.footer {
+    background: var(--color-bg-deep);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-8) 0;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.footer-logo .logo-symbol {
+    font-size: var(--text-xl);
+}
+
+.footer-copy,
+.footer-made {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.heart {
+    color: #e53e3e;
+}
+
+/* Botão voltar ao topo */
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-8);
+    right: var(--space-8);
+    width: 44px;
+    height: 44px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--text-lg);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-base);
+    z-index: 100;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ================================================================
+   12. RESPONSIVO — Media Queries
+   
+   AULA: O que são media queries?
+   São condições no CSS. "Se a tela for menor que X pixels,
+   aplique ESSES estilos em vez dos outros."
+   
+   Abordagem "desktop-first": escrevemos primeiro para desktop,
+   depois adaptamos para telas menores.
+   
+   Breakpoints (pontos de quebra) mais usados:
+   1024px → tablet landscape
+   768px  → tablet portrait
+   480px  → celular
+================================================================ */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-12);
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero-pretitle,
+    .hero-actions,
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .photo-frame {
+        width: 260px;
+        height: 260px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Nav mobile */
+    .men-links {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(5, 8, 16, 0.97);
+        backdrop-filter: blur(20px);
+        padding: var(--space-6);
+        gap: var(--space-2);
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--transition-base);
+        z-index: 999;
+    }
+
+    .men-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .btn-cv {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: var(--text-base);
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

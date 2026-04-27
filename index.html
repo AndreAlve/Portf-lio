@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta mane="viewport" content="wi=device-width, initial-scale=1.0">
+    <title>André Alves-Portfólio</title>
+    <meta name="description"
+        content="Portfólio de André Alves — Desenvolvedor Web e fundador da Sigma Orbitek. Criando interfaces modernas e soluções digitais com foco em resultados.">
+    <link rel="peconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#050810">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <nav class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="assets/img/logo-horizontal.png" alt="Sigma Orbitek-André Alves" class="nav-logo-ing"
+                    width="160" height="40">
+            </a>
+            <!--Links de navegação -->
+            <ul class="men-links" id="menlinks">
+
+                <li>
+                    <a href="#home" class="men-link active">Início</a>
+                </li>
+                <li>
+                    <a href="#about" class="men-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#skills" class="men-link">Habilidades</a>
+                </li>
+                <li>
+                    <a href="#projects" class="men-link">Projetos</a>
+                </li>
+                <li>
+                    <a href="#certificates" class="men-link">Certificados</a>
+                </li>
+                <li><a href="#contact" class="men-link">Contato</a></li>
+
+            </ul>
+
+            <!-- BOTÃO CTA: Ação principal da navegação -->
+            <a href="#" class="btn-cv" download>
+                <i class="ri-download-line"></i> Curriculo
+            </a>
+
+
+            <!-- BOTÃO HAMBURGUER: Só aparece no celular (feito no CSS) -->
+            <button class="menu-celu" id="menucelular" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <canvas class="star-canvas" id="starCanvas"></canvas>
+
+            <div class="orbital-ring orbital-ring--1" aria-hidden="true"></div>
+            <div class="orbital-ring orbital-ring--2" aria-hidden="true"></div>
+
+            <div class="hero-container">
+
+                <!-- LADO ESQUERDO: Texto e CTAs -->
+                <div class="hero-content">
+
+                    <!-- Pré-título: contexto rápido -->
+                    <div class="hero-pretitle">
+                        <span class="pretitle-line"></span>
+                        <span>Desenvolvedor em Formação</span>
+                        <span class="pretitle-line"></span>
+                    </div>
+
+
+                    <h1 class="hero-title">
+                        André <span class="highlight">Alves</span>
+                    </h1>
+
+
+                    <!-- Subtítulo: cargo/área -->
+                    <h2 class="hero-subtitle">
+                        Estudante de Análise e Desenvolvimento de Sistemas
+                    </h2>
+
+                    <!-- Tagline da marca: posicionamento único -->
+                    <p class="hero-brand-tag">
+                        <span class="sigma-symbol">Σ</span> Sigma Orbitek
+                        <span class="brand-separator">·</span>
+                        A Tecnologia que Orbita o Futuro
+                    </p>
+
+                    <!-- Descrição pessoal -->
+                    <p class="hero-description">
+                        Apaixonado por tecnologia e por criar soluções que fazem a
+                        diferença. Transformo ideias em projetos reais com criatividade, dedicação,
+                        organização e foco em resultados.
+                    </p>
+
+                    <!-- Botões de ação -->
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            Ver Projetos <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline" download>
+                            Baixar Currículo <i class="ri-download-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Links sociais -->
+                    <div class="hero-socials">
+                        <a href="https://github.com/AndreAlve" class="social-link" aria-label="GitHub" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/andré-alves-69424b171/" class="social-link"
+                            aria-label="LinkedIn" target="_blank">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" target="_blank">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="aa05112029@gmail.com" class="social-link" aria-label="Email">
+                            <i class="ri-mail-line"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- LADO DIREITO: Foto com efeito de anel luminoso -->
+                <div class="hero-image">
+                    <div class="photo-frame">
+                        <div class="photo-ring"></div>
+                        <div class="photo-ring photo-ring--outer"></div>
+                        <!-- Substitua o src pela sua foto real -->
+                        <img src="assets/img/profile.jpg" alt="André Alves — Desenvolvedor Web" class="profile-photo">
+                    </div>
+                    <!-- Partículas decorativas ao redor da foto -->
+                    <div class="photo-particles" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Indicador de scroll: guia o usuário para baixo -->
+            <a href="#about" class="scroll-indicator" aria-label="Rolar para baixo">
+                <i class="ri-mouse-line"></i>
+                <span>Role para baixo</span>
+            </a>
+
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="ri-user-3-line"></i> Sobre mim
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="about-grid"></div>
+            <div class="about-text">
+                <div class="about-quote-bar"></div>
+                <p>
+                    Sou estudante de Análise e Desenvolvimento de Sistemas,
+                    buscando sempre aprender e evoluir. Gosto de trabalhar em
+                    projetos que me desafiam a aprender novas tecnologias e
+                    melhorar minhas habilidades.
+                </p>
+                <p>
+                    Tenho foco em desenvolvimento web, criar interfaces
+                    modernas e construir soluções eficientes.
+                </p>
+            </div>
+
+            <!-- Cards de destaque -->
+            <div class="about-cards">
+
+                <div class="about-card">
+                    <i class="ri-graduation-cap-line about-card-icon"></i>
+                    <h3>Educação</h3>
+                    <p>Análise e Desenvolvimento de Sistemas</p>
+                    <span class="about-card-status">Em andamento</span>
+                </div>
+
+                <div class="about-card">
+                    <i class="ri-focus-3-line about-card-icon"></i>
+                    <h3>Foco</h3>
+                    <p>Desenvolvimento Web · Soluções práticas</p>
+                </div>
+
+                <div class="about-card">
+                    <i class="ri-line-chart-line about-card-icon"></i>
+                    <h3>Objetivo</h3>
+                    <p>Crescer como desenvolvedor e gerar impacto com tecnologia</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="ri-code-s-slash-line"></i> Habilidades
+                    </h2>
+                </div>
+
+                <div class="skills-grid"></div>
+
+                <!-- Card: Front-end -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="ri-code-s-slash-line"></i>
+                        <h3>Front-end</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card: Back-end -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="ri-server-line"></i>
+                        <h3>Back-end</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Express</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Card: Banco de Dados -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="ri-database-2-line"></i>
+                        <h3>Banco de Dados</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+        </section>
+    </main>
+
+    <footer></footer>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
