@@ -3,18 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta mane="viewport" content="wi=device-width, initial-scale=1.0">
-    <title>André Alves-Portfólio</title>
-    <meta name="description"
-        content="Portfólio de André Alves — Desenvolvedor Web e fundador da Sigma Orbitek. Criando interfaces modernas e soluções digitais com foco em resultados.">
-    <link rel="peconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Alves — Portfólio | Sigma Orbitek</title>
+    <meta name="description" content="Portfólio de André Alves — Desenvolvedor Web e fundador da Sigma Orbitek.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.ico">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#050810">
@@ -22,540 +20,328 @@
 </head>
 
 <body>
-
     <header class="navbar" id="navbar">
         <nav class="nav-container">
             <a href="#home" class="nav-logo">
-                <img src="assets/img/logo-horizontal.png" alt="Sigma Orbitek-André Alves" class="nav-logo-ing"
+                <img src="assets/img/logo-horizontal.png" alt="Sigma Orbitek — André Alves" class="nav-logo-img"
                     width="160" height="40">
             </a>
-            <!--Links de navegação -->
-            <ul class="men-links" id="menlinks">
-
-                <li>
-                    <a href="#home" class="men-link active">Início</a>
-                </li>
-                <li>
-                    <a href="#about" class="men-link">Sobre</a>
-                </li>
-                <li>
-                    <a href="#skills" class="men-link">Habilidades</a>
-                </li>
-                <li>
-                    <a href="#projects" class="men-link">Projetos</a>
-                </li>
-                <li>
-                    <a href="#certificates" class="men-link">Certificados</a>
-                </li>
+            <ul class="men-links" id="menLinks">
+                <li><a href="#home" class="men-link active">Início</a></li>
+                <li><a href="#about" class="men-link">Sobre</a></li>
+                <li><a href="#skills" class="men-link">Habilidades</a></li>
+                <li><a href="#projects" class="men-link">Projetos</a></li>
+                <li><a href="#certificates" class="men-link">Certificados</a></li>
                 <li><a href="#contact" class="men-link">Contato</a></li>
-
             </ul>
-
-            <!-- BOTÃO CTA: Ação principal da navegação -->
-            <a href="#" class="btn-cv" download>
-                <i class="ri-download-line"></i> Curriculo
+            <a href="assets/docs/curriculo-andre-alves.pdf" class="btn-cv" download>
+                <i class="ri-download-line"></i> Currículo
             </a>
-
-
-            <!-- BOTÃO HAMBURGUER: Só aparece no celular (feito no CSS) -->
-            <button class="menu-celu" id="menucelular" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-celu" id="menuCelu" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
             </button>
-
         </nav>
     </header>
+
     <main>
         <section class="hero" id="home">
             <canvas class="star-canvas" id="starCanvas"></canvas>
-
             <div class="orbital-ring orbital-ring--1" aria-hidden="true"></div>
             <div class="orbital-ring orbital-ring--2" aria-hidden="true"></div>
-
             <div class="hero-container">
-
-                <!-- LADO ESQUERDO: Texto e CTAs -->
                 <div class="hero-content">
-
-                    <!-- Pré-título: contexto rápido -->
                     <div class="hero-pretitle">
                         <span class="pretitle-line"></span>
                         <span>Desenvolvedor em Formação</span>
                         <span class="pretitle-line"></span>
                     </div>
-
-
-                    <h1 class="hero-title">
-                        André <span class="highlight">Alves</span>
-                    </h1>
-
-
-                    <!-- Subtítulo: cargo/área -->
-                    <h2 class="hero-subtitle">
-                        Estudante de Análise e Desenvolvimento de Sistemas
-                    </h2>
-
-                    <!-- Tagline da marca: posicionamento único -->
+                    <h1 class="hero-title">André <span class="highlight">Alves</span></h1>
+                    <h2 class="hero-subtitle">Estudante de Análise e Desenvolvimento de Sistemas</h2>
                     <p class="hero-brand-tag">
                         <span class="sigma-symbol">Σ</span> Sigma Orbitek
                         <span class="brand-separator">·</span>
                         A Tecnologia que Orbita o Futuro
                     </p>
-
-                    <!-- Descrição pessoal -->
                     <p class="hero-description">
-                        Apaixonado por tecnologia e por criar soluções que fazem a
-                        diferença. Transformo ideias em projetos reais com criatividade, dedicação,
-                        organização e foco em resultados.
+                        Apaixonado por tecnologia e por criar soluções que fazem a diferença.
+                        Transformo ideias em projetos reais com criatividade, dedicação, organização e foco em
+                        resultados.
                     </p>
-
-                    <!-- Botões de ação -->
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            Ver Projetos <i class="ri-arrow-right-line"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline" download>
-                            Baixar Currículo <i class="ri-download-line"></i>
-                        </a>
+                        <a href="#projects" class="btn btn-primary">Ver Projetos <i class="ri-arrow-right-line"></i></a>
+                        <a href="assets/docs/curriculo-andre-alves.pdf" class="btn btn-outline" download>Baixar
+                            Currículo <i class="ri-download-line"></i></a>
                     </div>
-
-                    <!-- Links sociais -->
                     <div class="hero-socials">
-                        <a href="https://github.com/AndreAlve" class="social-link" aria-label="GitHub" target="_blank">
-                            <i class="ri-github-fill"></i>
-                        </a>
+                        <a href="https://github.com/AndreAlve" class="social-link" aria-label="GitHub"
+                            target="_blank"><i class="ri-github-fill"></i></a>
                         <a href="https://www.linkedin.com/in/andré-alves-69424b171/" class="social-link"
-                            aria-label="LinkedIn" target="_blank">
-                            <i class="ri-linkedin-fill"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram" target="_blank">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="aa05112029@gmail.com" class="social-link" aria-label="Email">
-                            <i class="ri-mail-line"></i>
-                        </a>
+                            aria-label="LinkedIn" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram" target="_blank"><i
+                                class="ri-instagram-line"></i></a>
+                        <a href="mailto:aa05112029@gmail.com" class="social-link" aria-label="Email"><i
+                                class="ri-mail-line"></i></a>
                     </div>
-
                 </div>
-
-                <!-- LADO DIREITO: Foto com efeito de anel luminoso -->
                 <div class="hero-image">
                     <div class="photo-frame">
                         <div class="photo-ring"></div>
                         <div class="photo-ring photo-ring--outer"></div>
-                        <!-- Substitua o src pela sua foto real -->
                         <img src="assets/img/profile.jpg" alt="André Alves — Desenvolvedor Web" class="profile-photo">
                     </div>
-                    <!-- Partículas decorativas ao redor da foto -->
                     <div class="photo-particles" aria-hidden="true">
                         <span></span><span></span><span></span><span></span>
                     </div>
                 </div>
-
             </div>
-
-            <!-- Indicador de scroll: guia o usuário para baixo -->
             <a href="#about" class="scroll-indicator" aria-label="Rolar para baixo">
-                <i class="ri-mouse-line"></i>
-                <span>Role para baixo</span>
+                <i class="ri-mouse-line"></i><span>Role para baixo</span>
             </a>
-
         </section>
 
         <section class="about" id="about">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="ri-user-3-line"></i> Sobre mim
-                    </h2>
+                    <h2 class="section-title"><i class="ri-user-3-line"></i> Sobre mim</h2>
                 </div>
-
+                <div class="about-grid">
+                    <div class="about-text">
+                        <div class="about-quote-bar"></div>
+                        <p>Sou estudante de Análise e Desenvolvimento de Sistemas, buscando sempre aprender e evoluir.
+                            Gosto de trabalhar em projetos que me desafiam a aprender novas tecnologias e melhorar
+                            minhas habilidades.</p>
+                        <p>Tenho foco em desenvolvimento web, criar interfaces modernas e construir soluções eficientes.
+                        </p>
+                    </div>
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <i class="ri-graduation-cap-line about-card-icon"></i>
+                            <h3>Educação</h3>
+                            <p>Análise e Desenvolvimento de Sistemas</p>
+                            <span class="about-card-status">Em andamento</span>
+                        </div>
+                        <div class="about-card">
+                            <i class="ri-focus-3-line about-card-icon"></i>
+                            <h3>Foco</h3>
+                            <p>Desenvolvimento Web · Soluções práticas</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="ri-line-chart-line about-card-icon"></i>
+                            <h3>Objetivo</h3>
+                            <p>Crescer como desenvolvedor e gerar impacto com tecnologia</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="about-grid"></div>
-            <div class="about-text">
-                <div class="about-quote-bar"></div>
-                <p>
-                    Sou estudante de Análise e Desenvolvimento de Sistemas,
-                    buscando sempre aprender e evoluir. Gosto de trabalhar em
-                    projetos que me desafiam a aprender novas tecnologias e
-                    melhorar minhas habilidades.
-                </p>
-                <p>
-                    Tenho foco em desenvolvimento web, criar interfaces
-                    modernas e construir soluções eficientes.
-                </p>
-            </div>
-
-            <!-- Cards de destaque -->
-            <div class="about-cards">
-
-                <div class="about-card">
-                    <i class="ri-graduation-cap-line about-card-icon"></i>
-                    <h3>Educação</h3>
-                    <p>Análise e Desenvolvimento de Sistemas</p>
-                    <span class="about-card-status">Em andamento</span>
-                </div>
-
-                <div class="about-card">
-                    <i class="ri-focus-3-line about-card-icon"></i>
-                    <h3>Foco</h3>
-                    <p>Desenvolvimento Web · Soluções práticas</p>
-                </div>
-
-                <div class="about-card">
-                    <i class="ri-line-chart-line about-card-icon"></i>
-                    <h3>Objetivo</h3>
-                    <p>Crescer como desenvolvedor e gerar impacto com tecnologia</p>
-                </div>
-
-            </div>
-
         </section>
 
         <section class="skills" id="skills">
             <div class="container">
-
                 <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="ri-code-s-slash-line"></i> Habilidades
-                    </h2>
+                    <h2 class="section-title"><i class="ri-code-s-slash-line"></i> Habilidades</h2>
                 </div>
-
-                <div class="skills-grid"></div>
-
-                <!-- Card: Front-end -->
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <i class="ri-code-s-slash-line"></i>
-                        <h3>Front-end</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-card-header"><i class="ri-code-s-slash-line"></i>
+                            <h3>Front-end</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">HTML</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span></div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">CSS</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span></div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">JavaScript</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot"></span><span class="dot"></span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">HTML</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">CSS</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Card: Back-end -->
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <i class="ri-server-line"></i>
-                        <h3>Back-end</h3>
+                    <div class="skill-card">
+                        <div class="skill-card-header"><i class="ri-server-line"></i>
+                            <h3>Back-end</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">Node.js</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot"></span><span class="dot"></span></div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">Express</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span><span
+                                        class="dot"></span><span class="dot"></span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">Node.js</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">Express</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <!-- Card: Banco de Dados -->
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <i class="ri-database-2-line"></i>
-                        <h3>Banco de Dados</h3>
+                    <div class="skill-card">
+                        <div class="skill-card-header"><i class="ri-database-2-line"></i>
+                            <h3>Banco de Dados</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">MySQL</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span><span
+                                        class="dot"></span><span class="dot"></span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">MySQL</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Card: Ferramentas -->
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <i class="ri-tools-line"></i>
-                        <h3>Ferramentas</h3>
+                    <div class="skill-card">
+                        <div class="skill-card-header"><i class="ri-tools-line"></i>
+                            <h3>Ferramentas</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">Git</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot"></span><span class="dot"></span></div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">GitHub</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span></div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">VS Code</span>
+                                <div class="skill-dots"><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot active"></span><span
+                                        class="dot active"></span><span class="dot"></span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">Git</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">GitHub</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">VS Code</span>
-                            <div class="skill-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
             </div>
         </section>
 
         <section class="projects" id="projects">
             <div class="container">
-
                 <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="ri-folder-3-line"></i> Projetos em Destaque
-                    </h2>
-                    <a href="#" class="section-link">
-                        Ver todos <i class="ri-arrow-right-line"></i>
-                    </a>
+                    <h2 class="section-title"><i class="ri-folder-3-line"></i> Projetos em Destaque</h2>
+                    <a href="#" class="section-link">Ver todos <i class="ri-arrow-right-line"></i></a>
                 </div>
-                <!-- Grid de projetos -->
                 <div class="projects-grid">
-
-                    <!-- PROJETO 1 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="assets/img/project-nutrivida.jpg" alt="NutriVida — Sistema de Cadastro">
-                            <div class="project-overlay">
-                                <a href="https://nutrivida.up.railway.app/index.html" class="project-demo-btn"
-                                    target="_blank">
-                                    <i class="ri-eye-line"></i> Ver Demo
-                                </a>
+                            <img src="assets/img/project-nutrivida.jpg" alt="NutriVida">
+                            <div class="project-overlay"><a href="https://nutrivida.up.railway.app/index.html"
+                                    class="project-demo-btn" target="_blank"><i class="ri-eye-line"></i> Ver Demo</a>
                             </div>
                         </div>
                         <div class="project-info">
-                            <div class="project-title-row">
-                                <span class="project-icon">🌿</span>
+                            <div class="project-title-row"><span class="project-icon">🌿</span>
                                 <h3>Nutri+Vida</h3>
                             </div>
-                            <p>Sistema de cadastro de produtos para loja de produtos naturais , com foco em praticidade
-                                e
+                            <p>Sistema de cadastro de produtos para loja de produtos naturais, com foco em praticidade e
                                 organização.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">MySQL</span>
-                            </div>
+                            <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                                    class="tag">JavaScript</span><span class="tag">Node.js</span><span
+                                    class="tag">MySQL</span></div>
                             <div class="project-links">
-                                <a href="https://github.com/AndreAlve/nutrivida" class="project-link" target="_blank">
-                                    Ver Projeto <i class="ri-arrow-right-line"></i>
-                                </a>
+                                <a href="https://github.com/AndreAlve/nutrivida" class="project-link"
+                                    target="_blank">Ver Projeto <i class="ri-arrow-right-line"></i></a>
                                 <a href="https://github.com/AndreAlve" class="project-link project-link--github"
-                                    target="_blank">
-                                    GitHub <i class="ri-github-fill"></i>
-                                </a>
+                                    target="_blank">GitHub <i class="ri-github-fill"></i></a>
                             </div>
                         </div>
                     </article>
-                    <!-- PROJETO 2 -->
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="assets/img/project-taskmanager.jpg" alt="Task Manager — Gerenciamento de Tarefas">
-                            <div class="project-overlay">
-                                <a href="#" class="project-demo-btn" target="_blank">
-                                    <i class="ri-eye-line"></i> Ver Demo
-                                </a>
-                            </div>
+                            <img src="assets/img/project-taskmanager.jpg" alt="Task Manager">
+                            <div class="project-overlay"><a href="#" class="project-demo-btn" target="_blank"><i
+                                        class="ri-eye-line"></i> Ver Demo</a></div>
                         </div>
                         <div class="project-info">
-                            <div class="project-title-row">
-                                <span class="project-icon">✅</span>
+                            <div class="project-title-row"><span class="project-icon">✅</span>
                                 <h3>Task Manager</h3>
                             </div>
                             <p>Aplicação de gerenciamento de tarefas com criação, edição, conclusão e filtros.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">LocalStorage</span>
-                            </div>
+                            <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                                    class="tag">JavaScript</span><span class="tag">LocalStorage</span></div>
                             <div class="project-links">
-                                <a href="#" class="project-link" target="_blank">
-                                    Ver Projeto <i class="ri-arrow-right-line"></i>
-                                </a>
-                                <a href="#" class="project-link project-link--github" target="_blank">
-                                    GitHub <i class="ri-github-fill"></i>
-                                </a>
+                                <a href="#" class="project-link" target="_blank">Ver Projeto <i
+                                        class="ri-arrow-right-line"></i></a>
+                                <a href="#" class="project-link project-link--github" target="_blank">GitHub <i
+                                        class="ri-github-fill"></i></a>
                             </div>
                         </div>
                     </article>
                 </div>
+            </div>
         </section>
 
         <section class="certificates" id="certificates">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="ri-award-line"></i> Certificados
-                    </h2>
-                    <a href="#" class="section-link">
-                        Ver todos <i class="ri-arrow-right-line"></i>
-                    </a>
+                    <h2 class="section-title"><i class="ri-award-line"></i> Certificados</h2>
+                    <a href="#" class="section-link">Ver todos <i class="ri-arrow-right-line"></i></a>
                 </div>
                 <div class="certificates-grid">
-
                     <div class="certificate-card">
-                        <div class="certificate-logo cert-html">
-                            <span>🤖</span>
-                        </div>
+                        <div class="certificate-logo cert-ai"><i class="ri-sparkling-2-line"></i></div>
                         <div class="certificate-info">
-                            <h3>INTELIGÊNCIA ARTIFICIAL GENERATIVA</h3>
-                            <span class="certificate-source">GOKURSOS INOVAÇOES
-                                EDUCACIONAI</span>
+                            <h3>Inteligência Artificial Generativa</h3>
+                            <span class="certificate-source">Gokursos Inovações Educacionais</span>
                             <span class="certificate-year">2025</span>
                         </div>
                     </div>
-
                     <div class="certificate-card">
-                        <div class="certificate-logo cert-git">
-                            <i class="ri-github-fill"></i>
-                        </div>
+                        <div class="certificate-logo cert-git"><i class="ri-github-fill"></i></div>
                         <div class="certificate-info">
                             <h3>Git e GitHub Do Zero</h3>
-                            <span class="certificate-source"></span>
+                            <span class="certificate-source">Udemy</span>
                             <span class="certificate-year">2025</span>
                         </div>
                     </div>
-
                     <div class="certificate-card">
-                        <div class="certificate-logo cert-logic">
-                            <i class="ri-code-s-slash-line"></i>
-                        </div>
+                        <div class="certificate-logo cert-logic"><i class="ri-code-s-slash-line"></i></div>
                         <div class="certificate-info">
                             <h3>Lógica de Programação Essencial</h3>
-                            <span class="certificate-source">O Instituto Federal de Educação, Ciência e Tecnologia do
-                                Rio Grande do Sul</span>
+                            <span class="certificate-source">Instituto Federal do Rio Grande do Sul</span>
                             <span class="certificate-year">2025</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <section class="contact" id="contact">
-
             <div class="container">
-
                 <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="ri-send-plane-line"></i> Vamos conversar?
-                    </h2>
+                    <h2 class="section-title"><i class="ri-send-plane-line"></i> Vamos conversar?</h2>
                 </div>
-
-                <div class="contact-grid"></div>
-
-                <!-- LADO ESQUERDO: Info de contato -->
-                <div class="contact-info">
-                    <p class="contact-description">
-                        Estou aberto a novas oportunidades, projetos e conexões.
-                        Entre em contato comigo!
-                    </p>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="ri-mail-line"></i>
-                            <a href="mailto:aa05112029@gmail.com">aa05112029@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="ri-phone-line"></i>
-                            <a href="tel:+5581995666335">(81) 99566-6335</a>
-                        </li>
-                        <li>
-                            <i class="ri-map-pin-line"></i>
-                            <span>Brasil</span>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <!-- LADO DIREITO: Formulário -->
-                <div class="contact-form-wrapper">
-
-                    <form class="contact-form" id="contactForm">
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Nome" required>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p class="contact-description">Estou aberto a novas oportunidades, projetos e conexões. Entre em
+                            contato comigo!</p>
+                        <ul class="contact-list">
+                            <li><i class="ri-mail-line"></i><a
+                                    href="mailto:aa05112029@gmail.com">aa05112029@gmail.com</a></li>
+                            <li><i class="ri-phone-line"></i><a href="tel:+5581995666335">(81) 99566-6335</a></li>
+                            <li><i class="ri-map-pin-line"></i><span>Brasil</span></li>
+                        </ul>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" name="name" placeholder="Nome" required>
+                                </div>
+                                <div class="form-group"><input type="email" name="email" placeholder="E-mail" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Assuntos">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Mensagem" rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="ri-send-plane-line"></i>Enviar Mensagem
-                        </button>
-
-                    </form>
+                            <div class="form-group"><input type="text" name="subject" placeholder="Assunto"></div>
+                            <div class="form-group"><textarea name="message" placeholder="Mensagem" rows="5"
+                                    required></textarea></div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="ri-send-plane-line"></i> Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
                 </div>
-
-            </div>
             </div>
         </section>
     </main>
@@ -563,31 +349,18 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-
-
                 <div class="footer-logo">
-                    <span class="logo-symbol">Σ</span>
-                    <span>André Alves</span>
+                    <span class="logo-symbol">Σ</span><span>André Alves</span>
                 </div>
-
-                <p class="footer-copy">
-                    © 2026 André Alves · Sigma Orbitek. Todos os direitos reservados.
-                </p>
-
-                <!-- Crédito técnico -->
-                <p class="footer-made">
-                    Desenvolvido com <span class="heart">❤</span> e muito código.
-                </p>
-
+                <p class="footer-copy">© 2026 André Alves · Sigma Orbitek. Todos os direitos reservados.</p>
+                <p class="footer-made">Desenvolvido com <span class="heart">❤</span> e muito código.</p>
             </div>
         </div>
-
-        <!-- Botão voltar ao topo -->
         <a href="#home" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
             <i class="ri-arrow-up-line"></i>
         </a>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 

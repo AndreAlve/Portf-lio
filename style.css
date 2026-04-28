@@ -215,7 +215,7 @@ button {
 
 
 /* ================================================================
-    3. COMPONENTES GLOBAIS
+   3. COMPONENTES GLOBAIS
 ================================================================ */
 
 /* --- Container: limita a largura e centraliza o conteúdo --- */
@@ -279,12 +279,12 @@ button {
 .btn-primary {
     background: var(--gradient-primary);
     color: white;
-    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(245, 166, 35, 0.25);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(245, 166, 35, 0.4);
 }
 
 /* Botão outline — transparente com borda */
@@ -310,8 +310,8 @@ button {
     display: inline-block;
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-sm);
-    background: rgba(0, 212, 255, 0.08);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: rgba(245, 166, 35, 0.08);
+    border: 1px solid rgba(245, 166, 35, 0.2);
     color: var(--color-primary);
     font-size: var(--text-xs);
     font-weight: 500;
@@ -319,7 +319,7 @@ button {
 
 
 /* ================================================================
-        4. NAVBAR
+   4. NAVBAR
 ================================================================ */
 .navbar {
     position: fixed;
@@ -373,14 +373,24 @@ button {
     filter: drop-shadow(0 0 14px rgba(245, 166, 35, 0.55));
 }
 
-/* Links de navegação */
+/* Lista de navegação — container */
 .men-links {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: var(--space-1);
     list-style: none;
+    /* Garante comportamento correto no desktop */
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
+    background: none;
+    padding: 0;
+    border: none;
 }
 
+/* Links individuais */
 .men-link {
     padding: 0.4rem 0.8rem;
     font-size: var(--text-sm);
@@ -429,7 +439,7 @@ button {
 }
 
 /* Botão hamburguer (só mobile) */
-.menu-celu {
+.nav-toggle {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -442,7 +452,7 @@ button {
     padding: 4px;
 }
 
-.menu-celu span {
+.nav-toggle span {
     display: block;
     height: 2px;
     background: var(--color-text-primary);
@@ -450,21 +460,21 @@ button {
     transition: all var(--transition-base);
 }
 
-.menu-celu.open span:nth-child(1) {
+.nav-toggle.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
 
-.menu-celu.open span:nth-child(2) {
+.nav-toggle.open span:nth-child(2) {
     opacity: 0;
 }
 
-.menu-celu.open span:nth-child(3) {
+.nav-toggle.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
 
 /* ================================================================
-   5. HERO
+    5. HERO
 ================================================================ */
 .hero {
     position: relative;
@@ -533,7 +543,7 @@ button {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: var(--space-16);
-    min-height: 100vh;
+    min-height: calc(100vh - var(--navbar-height));
 }
 
 /* Pré-título */
@@ -679,7 +689,7 @@ button {
     border-radius: 50%;
     position: relative;
     z-index: 2;
-    border: 3px solid rgba(0, 212, 255, 0.3);
+    border: 3px solid rgba(245, 166, 35, 0.3);
 }
 
 /* Anel luminoso que pulsa */
@@ -696,7 +706,7 @@ button {
 .photo-ring--outer {
     inset: -20px;
     border-width: 1px;
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: rgba(245, 166, 35, 0.3);
     animation-delay: 0.5s;
 }
 
@@ -1500,7 +1510,7 @@ button {
         pointer-events: all;
     }
 
-    .nav-toggle {
+    .menu-celu {
         display: flex;
     }
 
@@ -1508,11 +1518,12 @@ button {
         display: none;
     }
 
-    .nav-link {
+    .men-link {
         padding: 0.75rem 1rem;
         font-size: var(--text-base);
         width: 100%;
         text-align: center;
+        display: block;
     }
 
     .about-cards {
@@ -1550,5 +1561,22 @@ button {
     .hero-actions .btn {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Certificado IA */
+.cert-ai {
+    background: linear-gradient(135deg, #F5A623, #d97706);
+    color: white;
+    font-size: var(--text-xl);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+/* Mobile hero fix */
+@media (max-width: 768px) {
+    .hero-container {
+        min-height: auto;
+        padding-top: calc(var(--navbar-height) + 2rem);
+        padding-bottom: 4rem;
     }
 }
